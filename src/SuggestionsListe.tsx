@@ -1,14 +1,14 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
-export default function ArticleList(props:any) {
+export default function SuggestionsList(props:any) {
   
     return (
       <Transition.Root show={props.open} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={props.setOpen}>
+        <Dialog as="div" className="relative z-10" onClose={props.setSugOpen}>
           <Transition.Child
             as={Fragment}
             enter="ease-in-out duration-500"
@@ -42,7 +42,7 @@ export default function ArticleList(props:any) {
                             <button
                               type="button"
                               className="relative -m-2 p-2 text-gray-400 hover:text-gray-500"
-                              onClick={() => props.setOpen(false)}
+                              onClick={() => props.setSugOpen(false)}
                             >
                               <span className="absolute -inset-0.5" />
                               <span className="sr-only">Close panel</span>
